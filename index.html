@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+      <img src="./assets/detailed-chef-logo-template_23-2148986823-removebg-preview.png" width="200px" alt="">
+      <ul class="nav-menu">
+        <div class="search-container">
+          <input id="searchInput" type="text" placeholder="Search food">
+          <button id="searchButton">
+          <img src="https://cdn-icons-png.flaticon.com/128/3272/3272825.png" alt="Search">
+          </button>
+        </div>
+        <div><img src="" alt=""></div>
+      </div>     
+    </nav>  
+  <div class="random">
+
+    <img src="./assets/js chef image.png" width="400px" alt="">
+    <p>🍽️ Ready to embark on a flavor-filled <br>journey? Let serendipity guide your taste <br> buds with our handpicked random
+      recipe! 🎲✨</p>
+    <div id="randomfood"></div> <!--   For showing Random food -->
+  </div>
+  <!-- results section -->
+  <section id="results">
+    <div class="results">
+      <img src="" alt="">
+      <p id="popularSearch">Popular Search Results</p>
+    </div>
+    <div>
+
+      <div id="food"></div> <!--   For shwoing search Results -->
+
+    </div>
+  </section>
+
+  <div id="ingredients_blur_div">
+    <div id="ingredients"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

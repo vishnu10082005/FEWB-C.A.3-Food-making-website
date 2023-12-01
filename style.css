@@ -1,0 +1,383 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    min-height: 100vh;
+    background: linear-gradient(#414040, #CCBBBB) no-repeat;
+    /* background: linear-gradient(cyan,white) no-repeat; */
+    background-size: cover;
+}
+
+#food {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#card {
+    width: 250px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px black;
+    align-items: center;
+    background: linear-gradient(#5e5c5c, #d49a9a) no-repeat;
+    
+}
+#results img{
+    margin-left: -350px;
+    margin-top: -40px;
+}
+#card img {
+    width: 70%;
+    border-radius: 50%;
+    margin-top: -30px;
+    margin-left: 10%;
+}
+a{
+    text-decoration: none;
+    color: white
+}
+#card h3 {
+    margin-top: 10px;
+    font-size: 17px;
+}
+#card p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+/* Define animation keyframes */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply animation to the button */
+  #card button {
+    animation: pulse 1s ease-in-out infinite;
+    /* Add other styling as needed */
+    padding: 10px 20px;
+    background:radial-gradient(rgb(195, 181, 181),rgb(237, 71, 71));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Add hover effect */
+  #card button:hover {
+    transform: scale(1.1);
+  }
+  /* Define keyframes for animations */
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to the #ingredients element */
+  #ingredients {
+    margin-top: 50px;
+    height: 80vh;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    width: 50%;
+    overflow: scroll;
+    filter: none;
+    margin: auto;
+    margin-top: 5vh;
+    border: 1px solid black;
+    background-color: #f7f7f7;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: moveUpDown 2s ease-in-out infinite alternate,
+               fadeInOut 3s ease-in-out infinite;
+  }
+  
+  /* Change text design */
+  #ingredients h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3d3d3d;
+  }
+  
+  #ingredients p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666666;
+  }
+  
+  /* Apply hover effect */
+  #ingredients:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: none; /* Disable animations on hover */
+  }
+  #backbutton button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  #backbutton button::before {
+    content: 'X';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #backbutton button:hover::before {
+    opacity: 1;
+  }
+  #backbutton button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #backbutton button::before {
+    content: 'X';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #backbutton button:hover {
+    width: 40px;
+  }
+  
+  #backbutton button:hover::before {
+    opacity: 1;
+  }
+  
+  #backbutton button:hover span {
+    margin-left: -100%;
+  }
+     
+
+#ingredients_blur_div {
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+#temp {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: none;
+    filter: blur(7px);
+}
+#ingredients img {
+    width: 200px;
+    margin-top: 30px;
+    border-radius: 40px;
+}
+#backbutton {
+    display: flex;
+    justify-content: space-between;
+}
+#backbutton img {
+    margin-left: 120%;
+}
+#backbutton button {
+    margin-right: 60px;
+    margin-top: 60px;
+}
+.random {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 90%;
+}
+.random p {
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #CCBBBB;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 8px 0;
+    animation: typingAnimation 4s steps(100) infinite;
+    width: 100px;
+  }
+  
+  @keyframes typingAnimation {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+}
+#searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    border: 2px solid #ccc;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#searchButton {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#searchButton img {
+    width: 20px;
+    height: 20px;
+}
+
+#results p{
+    font-size: 30px;
+    margin-left: 10%;
+    margin-top: 20%;
+    color: black;
+    display: none;
+}
+.results{
+    display: flex;
+}
+.results img{
+    width: 30%;
+    height: 30%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+    position: relative;
+    left: 6%;
+}
+#ingredients::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  #ingredients {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  
+  #ingredients:hover::-webkit-scrollbar {
+    display: none;
+  }
+  @media screen and (max-width:400px){
+    .random{
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-evenly;
+        align-items: center;
+        width: auto;
+        flex-direction: column;
+        height: 1000px;
+    }
+    .random p{
+        width: 90%;
+        font-size: 20px;
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    .navbar img{
+       margin-left: 40%;    }
+    #results p{
+        text-align: center;   
+        font-size: 20px;
+        margin-top: 20%;
+        color: black;
+        display: none;
+        position: relative;
+        left: 75%;
+        
+       }
+       #ingredients {
+        margin-top: 50px;
+        height: 80vh;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        width: 90%;
+        overflow: scroll;
+        filter: none;
+        margin: auto;
+        margin-top: 5vh;
+        border: 1px solid black;
+        color: black;
+        /* background-color: red; */
+    }
+    #ingredients img{
+        margin-left: 80px;
+    }
+  }
